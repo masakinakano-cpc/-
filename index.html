@@ -5,210 +5,177 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>「またか…」から卒業。派遣会社の年間8時間研修、担当者の負担を9割減らす思考法</title>
     <style>
-        /* --- Base Styles --- */
+        /* --- Basic Styles --- */
         body {
-            margin: 0;
-            padding: 0;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
             line-height: 1.8;
-            color: #34495e;
-            background-color: #f7f9fa;
+            color: #333;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
         }
         .container {
             max-width: 800px;
-            margin: 0 auto;
-            background-color: #ffffff;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            margin: 40px auto;
+            padding: 20px 40px;
+            background-color: #fff;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-radius: 8px;
         }
 
-        /* --- Header & Title --- */
-        header {
-            padding: 60px 40px 40px 40px;
-            text-align: center;
-        }
+        /* --- Typography --- */
         h1 {
             font-size: 32px;
-            line-height: 1.4;
-            margin: 0 0 10px 0;
+            text-align: center;
+            margin-bottom: 10px;
             font-weight: 700;
         }
-        .subtitle {
-            font-size: 16px;
-            color: #7f8c8d;
-            margin: 0;
+        h2 {
+            font-size: 18px;
+            text-align: center;
+            color: #555;
+            margin-bottom: 30px;
+            font-weight: normal;
         }
-
-        /* --- Main Content --- */
-        main {
-            padding: 0 40px 60px 40px;
-        }
-        article > p:first-of-type {
-            font-size: 1.1em;
-            color: #2c3e50;
-        }
-
-        /* --- Headings --- */
         h3 {
-            font-size: 26px;
-            border-bottom: 3px solid #3498db;
+            font-size: 24px;
+            border-bottom: 3px solid #0056b3;
             padding-bottom: 10px;
-            margin: 60px 0 30px 0;
+            margin-top: 60px;
+            margin-bottom: 30px;
         }
         h4 {
             font-size: 20px;
-            color: #3498db;
-            margin: 40px 0 15px 0;
-            font-weight: 600;
+            color: #0056b3;
+            margin-top: 40px;
+        }
+        p {
+            margin-bottom: 1.2em;
+            font-size: 16px;
+        }
+        strong {
+            color: #0056b3;
         }
 
-        /* --- Images & Captions --- */
-        .main-visual {
-            width: 100%;
+        /* --- Visual Elements --- */
+        img {
+            max-width: 100%;
             height: auto;
+            display: block;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        .main-visual {
             margin-bottom: 40px;
         }
         .screenshot {
-            width: 100%;
-            border: 1px solid #ecf0f1;
-            margin: 20px 0;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            border-radius: 4px;
+            border: 1px solid #ddd;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
         .caption {
             font-size: 14px;
-            color: #7f8c8d;
+            color: #666;
             text-align: center;
-            margin-top: -5px;
+            margin-top: -10px;
             margin-bottom: 40px;
         }
-        .mobile-screenshot-wrapper {
-            text-align: center;
-        }
-        .mobile-screenshot {
-            max-width: 300px;
-            width: 80%;
-        }
 
-        /* --- Special Boxes --- */
-        .summary-box, .law-box {
-            background-color: #eaf5fc;
-            border-left: 5px solid #3498db;
+        /* --- Components --- */
+        .summary-box {
+            background-color: #f0f7ff;
+            border: 2px solid #b3d7ff;
             padding: 25px;
             margin: 40px 0;
-            border-radius: 0 4px 4px 0;
+            border-radius: 8px;
         }
-        .summary-box h4, .law-box h4 {
+        .summary-box h4 {
             margin-top: 0;
-            color: #2980b9;
+            color: #0056b3;
+            font-size: 20px;
         }
-        .summary-box ul, .law-box ul {
+        .summary-box ul {
             padding-left: 20px;
-            margin: 0;
-            list-style-type: '✔ ';
+            margin: 10px 0 0;
         }
-        .law-box ul {
-            list-style-type: '📜 ';
+        .summary-box li {
+            margin-bottom: 0.5em;
         }
-
-        /* --- Voice Section --- */
+        blockquote {
+            background-color: #f5f5f5;
+            border-left: 5px solid #ccc;
+            padding: 20px;
+            margin: 30px 0;
+        }
         .voice-item {
             display: flex;
             align-items: flex-start;
             margin-bottom: 30px;
+            padding: 20px;
+            background-color: #fafafa;
+            border-radius: 8px;
         }
         .voice-icon {
-            font-size: 48px;
+            font-size: 40px;
             margin-right: 20px;
-            color: #3498db;
-            line-height: 1;
+            color: #007bff;
+            flex-shrink: 0;
         }
-        .voice-item h4 {
-            margin: 0 0 5px 0;
-            color: #2c3e50;
-            font-size: 18px;
-        }
-        .voice-item p {
-            margin: 0;
-            font-style: italic;
-        }
-
-        /* --- Profile Section --- */
         .profile-box {
             display: flex;
             align-items: center;
-            background-color: #f7f9fa;
-            padding: 30px;
-            margin-top: 60px;
+            background-color: #f5f5f5;
+            padding: 25px;
+            margin-top: 50px;
             border-radius: 8px;
         }
         .profile-box img {
-            width: 120px;
-            height: 120px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
-            margin-right: 30px;
-            object-fit: cover;
+            margin-right: 25px;
+            margin-top: 0;
+            margin-bottom: 0;
         }
-        .profile-box h4 {
-            margin: 0 0 10px 0;
-            color: #2c3e50;
-        }
-
-        /* --- CTA & Download --- */
         .cta-button {
             display: block;
             width: 90%;
             max-width: 500px;
-            margin: 20px auto;
+            margin: 25px auto;
             padding: 18px;
-            background: linear-gradient(135deg, #3498db, #2980b9);
-            color: #ffffff;
+            background: linear-gradient(to right, #007bff, #0056b3);
+            color: #fff;
             text-align: center;
             text-decoration: none;
-            font-size: 20px;
+            font-size: 18px;
             border-radius: 8px;
             font-weight: bold;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 10px rgba(52, 152, 219, 0.4);
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
         }
         .cta-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(52, 152, 219, 0.5);
+            box-shadow: 0 6px 15px rgba(0, 123, 255, 0.4);
         }
-        .cta-button.sub {
-            background: linear-gradient(135deg, #95a5a6, #7f8c8d);
-            box-shadow: 0 4px 10px rgba(127, 140, 141, 0.3);
+        .cta-button.download {
+            background: linear-gradient(to right, #28a745, #1e7e34);
+            box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);
         }
-        .cta-button.sub:hover {
-             box-shadow: 0 6px 15px rgba(127, 140, 141, 0.4);
+        .cta-button.download:hover {
+             box-shadow: 0 6px 15px rgba(40, 167, 69, 0.4);
         }
-        .download-section {
-            text-align: center;
-            padding: 40px;
-            background-color: #eaf5fc;
-            margin: 60px -40px; /* Stretch to container edges */
+        .course-list {
+            background-color: #f9f9f9;
+            border: 1px solid #eee;
+            padding: 20px;
+            border-radius: 8px;
         }
-        .download-section h4 {
-            margin-top: 0;
+        .course-list ul {
+            padding-left: 20px;
+            margin-top: 10px;
+            margin-bottom: 0;
         }
-
-        /* --- Responsive Design --- */
-        @media (max-width: 600px) {
-            header, main {
-                padding: 30px 20px;
-            }
-            .download-section {
-                 margin: 40px -20px;
-                 padding: 30px 20px;
-            }
-            h1 { font-size: 26px; }
-            h3 { font-size: 22px; }
-            .profile-box {
-                flex-direction: column;
-                text-align: center;
-            }
-            .profile-box img {
-                margin: 0 0 20px 0;
-            }
+        .course-list li {
+            font-weight: 500;
         }
     </style>
 </head>
@@ -216,128 +183,109 @@
     <div class="container">
         <header>
             <h1>「またか…」から卒業。派遣会社の年間8時間研修、担当者の負担を9割減らす思考法</h1>
-            <p class="subtitle">特集インタビュー：『派遣の学校』開発担当・西原さんに聞く</p>
+            <h2>特集インタビュー：『派遣の学校』開発担当・西原さんに聞く、法令と現場の"ちょうどいい"着地点</h2>
         </header>
 
-        <main>
-            <article>
-                <!-- [画像案1] 西原さんのインタビュー風景写真 -->
-                <img src="https://placehold.co/800x400/A9CCE3/FFFFFF?text=Interview+Scene" alt="西原さんがインタビューに答えている様子" class="main-visual">
+        <img src="https://via.placeholder.com/800x400.png?text=Interview+with+Mr.+Nishihara" alt="西原さんがインタビューに答えている様子" class="main-visual">
 
-                <div class="summary-box">
-                    <h4>この記事のポイント</h4>
-                    <ul>
-                        <li>派遣法の「年間8時間研修」は、「器」というテンプレート発想で計画が驚くほど楽になる。</li>
-                        <li>面倒な事業報告書は、「提出様式そのままExcel出力」機能で作業時間がほぼゼロに。</li>
-                        <li>スタッフの満足度は、「スマホ完結」と「実務直結の教材」で向上する。</li>
-                        <li>法令遵守と現場の負担軽減は、賢い仕組みで両立できる。</li>
-                    </ul>
-                </div>
+        <div class="summary-box">
+            <h4>この記事のポイント</h4>
+            <ul>
+                <li>派遣法の「年間8時間研修」は、<strong>「器」というテンプレート発想</strong>で計画が驚くほど楽になる。</li>
+                <li>面倒な事業報告書は、<strong>「提出様式そのままExcel出力」</strong>で担当者の作業がゼロに。</li>
+                <li>スタッフの満足度は、<strong>「スマホ完結」と「実務直結の教材」</strong>で向上する。</li>
+                <li>法令遵守と現場の負担軽減は、<strong>優れた仕組みで両立できる</strong>ことを理解する。</li>
+            </ul>
+        </div>
 
-                <p>「またこの季節か…」派遣会社の教育ご担当者様なら、キャリアアップ教育訓練の計画を前に、一度はこう感じたことがあるかもしれません。スタッフ全員が対象、費用は会社負担、受講時間は勤務扱い、入職時の教育は必須…と、やるべきことは明確です。しかし、それをどう日々の業務と両立させ、意味のあるものにするか。多くの担当者様が頭を悩ませるポイントです。</p>
-                <p>今回は、そんな課題に「法令に強く、現場に優しい」というアプローチで応えるeラーニングサービス『派遣の学校』の開発担当、西原剛さんにお話を伺いました。複雑な要件をシンプルに満たし、担当者の手間を最小限にするための"目からウロコ"のヒントが満載です。</p>
+        <p>「またこの季節か…」派遣会社の教育ご担当者様なら、キャリアアップ教育訓練の計画を前に、一度はこう感じたことがあるかもしれません。スタッフ全員が対象で、費用は会社負担、受講時間は勤務扱い。入職時の教育は必須で、最初の3年間は年8時間以上の機会提供が目安…と、やるべきことは明確です。しかし、それをどうやって日々の業務と両立させ、意味のあるものにするか。多くの担当者様が頭を悩ませるポイントです。</p>
+        <p>今回は、そんな課題に「法令に強く、現場に優しい」というアプローチで応えるeラーニングサービス『派遣の学校』の開発担当、西原剛さんにお話を伺いました。複雑な要件をシンプルに満し、担当者の手間を最小限にするための"目からウロコ"のヒントが満載です。</p>
 
-                <h3>「年8時間の"器"を、最初から用意する」という発想</h3>
+        <h3>「年8時間の"器"を、最初から用意する」という発想</h3>
 
-                <h4>――単刀直入に、派遣法のキャリアアップ教育訓練で一番大変なのはどこでしょうか？</h4>
-                <p><strong>西原さん：</strong> 「何をするか」が決まっていても、それを「どう組み立て、どう運用するか」で皆さん手が止まってしまうんです。特に「段階的かつ体系的に」という部分ですね。そこで私たちは、<strong>最初から「年8時間」という"器"をテンプレートとして用意する</strong>、という発想に至りました。</p>
+        <h4>――単刀直入に、派遣法のキャリアアップ教育訓練で一番大変なのはどこでしょうか？</h4>
+        <p><strong>西原さん：</strong> 「何をするか」が決まっていても、それを「どう組み立て、どう運用するか」で皆さん手が止まってしまうんです。特に「段階的かつ体系的に」という部分ですね。そこで私たちは、<strong>最初から「年8時間」という"器"をテンプレートとして用意する</strong>、という発想に至りました。</p>
 
-                <h4>――"器"ですか？</h4>
-                <p><strong>西原さん：</strong> はい。例えば1年目のスタッフなら、この8時間の器の中に「入職時研修（必須）」「情報セキュリティ」「Excel基礎」「ビジネスマナー」といったパーツをはめ込んでいくだけで、もう計画の骨格が完成します。ゼロから考える必要がないので、<strong>担当者の方が"計画づくりで迷子にならない"</strong>。これが一番のポイントです。</p>
+        <img src="https://via.placeholder.com/800x250.png?text=8-Hour+Training+Framework" alt="8時間の器に研修ピースがはまる図解" class="screenshot">
+        <p class="caption">8時間の"器"に、必要な研修（入職時、Excelなど）をはめ込むだけで計画の骨格が完成します。</p>
 
-                <!-- [画像案2] 「8時間の器」を説明するシンプルな図解 -->
-                <img src="https://placehold.co/800x250/EAF5FC/34495E?text=Concept%3A+8-Hour+%22Container%22" alt="8時間の器に研修ピースがはまるコンセプト図" class="screenshot">
-                <p class="caption">「器」に研修項目をはめ込むだけで、法令に沿った計画の土台が完成します。</p>
+        <blockquote>
+            <h4>【法令の土台をおさらい】</h4>
+            <p><strong>対象：</strong> 派遣スタッフ全員 / <strong>費用：</strong> 会社負担（無償） / <strong>時間：</strong> 勤務扱い（有給） / <strong>必須：</strong> 入職時の教育 / <strong>目安：</strong> 最初の3年間は年8時間以上 / <strong>窓口：</strong> キャリア相談窓口の設置</p>
+        </blockquote>
 
-                <div class="law-box">
-                    <h4>【法令の土台をおさらい】</h4>
-                    <ul>
-                        <li><strong>対象：</strong> 派遣スタッフ全員</li>
-                        <li><strong>費用：</strong> 会社負担（無償）</li>
-                        <li><strong>時間：</strong> 勤務扱い（有給）</li>
-                        <li><strong>必須：</strong> 入職時の教育</li>
-                        <li><strong>目安：</strong> 最初の3年間は年8時間以上（※フルタイムで1年以上見込みの場合）</li>
-                        <li><strong>窓口：</strong> キャリア相談窓口の設置</li>
-                    </ul>
-                </div>
+        <h3>担当者の「あの面倒な作業」を、ボタンひとつで</h3>
+        <h4>――計画の次は、日々の運用と報告業務が待っています。</h4>
+        <p><strong>西原さん：</strong> まさに。特に月末や年度末の報告書作成は本当に大変ですよね。だから、『派遣の学校』で最もこだわった機能の一つが、<strong>事業報告書を「提出様式そのまま」でExcel出力できる</strong>機能です。</p>
 
-                <h3>担当者の「あの面倒な作業」を、ボタンひとつで</h3>
-                <h4>――計画の次は、日々の運用と報告業務が待っています。</h4>
-                <p><strong>西原さん：</strong> まさに。特に月末や年度末の報告書作成は本当に大変ですよね。だから、『派遣の学校』で最もこだわった機能の一つが、<strong>事業報告書を「提出様式そのまま」でExcel出力できる</strong>機能です。</p>
+        <img src="https://via.placeholder.com/800x450.png?text=Official+Report+Excel+Export" alt="事業報告書のExcel出力画面" class="screenshot">
+        <p class="caption">ボタン一つで労働局への提出様式と全く同じレイアウトのExcelが完成。集計も転記も不要です。</p>
 
-                <h4>――「そのまま」ですか？</h4>
-                <p><strong>西原さん：</strong> はい。誰が、いつ、どの研修を、何時間受けたか、といった情報が、労働局へ提出する形式と全く同じレイアウトで出力されます。あとは印刷するだけ。<strong>集計や転記といった、あの地味で時間のかかる作業が一切なくなります。</strong>導入企業様からは「月末の胃痛が消えた」なんて声もいただくほどです（笑）。</p>
+        <h3>「これなら続けられる」とスタッフに思ってもらう工夫</h3>
+        <h4>――とはいえ、主役は受講する派遣スタッフの皆さんです。</h4>
+        <p><strong>西原さん：</strong> おっしゃる通りです。だからこそ、<strong>「スマホで、スキマ時間に、サクッと終えられる」</strong>ことを徹底しています。特に評価が高いのは<strong>Excel講座</strong>ですね。ブラウザ上で実際にExcelを操作しているかのような「シミュレーション問題」があるので、派遣先ですぐに役立つ操作を体で覚えられるんです。</p>
 
-                <!-- [画像案3] (最重要) 事業報告書のExcel出力画面のスクリーンショット -->
-                <img src="https://placehold.co/800x450/BDC3C7/FFFFFF?text=Actual+Excel+Export+Screen" alt="事業報告書のExcel出力画面" class="screenshot">
-                <p class="caption">ボタン一つで、見慣れた提出様式のExcelファイルが完成。転記作業はもう不要です。</p>
+        <img src="https://via.placeholder.com/400x700.png?text=Mobile+Excel+Simulation" alt="スマートフォンでのExcel講座受講画面" style="max-width: 300px; margin: 20px auto; display: block;" class="screenshot">
+        <p class="caption">スマホ一つで、いつでもどこでも実践的なスキルを学べます。</p>
 
+        <h3>導入企業様の声（VOICE）</h3>
 
-                <h3>「これなら続けられる」とスタッフに思ってもらう工夫</h3>
-                <h4>――とはいえ、主役は受講する派遣スタッフの皆さんです。</h4>
-                <p><strong>西原さん：</strong> おっしゃる通りです。どんなに立派な計画も、受けてもらえなければ意味がありませんから。だからこそ、<strong>「スマホで、スキマ時間に、サクッと終えられる」</strong>ことを徹底しています。</p>
-                <p>特に評価が高いのは<strong>Excel講座</strong>ですね。ただ動画を見るだけでなく、ブラウザ上で実際にExcelを操作しているかのような「シミュレーション問題」があるんです。「見出しの固定」や「フィルター」といった、<strong>派遣先ですぐに役立つ操作を体で覚えられる</strong>ので、「仕事が楽になった」という声をたくさんいただきます。</p>
+        <div class="voice-item">
+            <div class="voice-icon">👤</div>
+            <div>
+                <h4>「"年8時間"の計画に、もう悩まない」</h4>
+                <p>（労務担当者様）毎年頭を悩ませていた計画が、テンプレートのおかげで一瞬で形になりました。入職時研修の組み込み忘れもなくなり、法令遵守の安心感が違います。</p>
+            </div>
+        </div>
+         <div class="voice-item">
+            <div class="voice-icon">👤</div>
+            <div>
+                <h4>「月末の報告書づくりが、本当に楽になった」</h4>
+                <p>（営業所長様）「提出様式そのまま出力」は、もはや魔法です（笑）。以前は半日かかっていた作業が数分で終わるので、その分スタッフのフォローに時間を使えるようになりました。</p>
+            </div>
+        </div>
 
-                <!-- [画像案4] スマホでのExcelシミュレーション画面 -->
-                <div class="mobile-screenshot-wrapper">
-                    <img src="https://placehold.co/400x700/ECF0F1/34495E?text=Mobile+E-Learning" alt="スマートフォンでのExcel講座受講画面" class="screenshot mobile-screenshot">
-                </div>
-                <p class="caption">通勤時間や休憩中に。スマホ一つで実践的なスキルが身につきます。</p>
+        <h3>得意な業界に合わせて選べる、最適な教育パートナー</h3>
 
-                <h3>導入企業様の声（VOICE）</h3>
+        <h4>――グループには、製造・物流に特化した『クロスラーニング』もありますが、どのように考えれば良いでしょうか？</h4>
+        <p><strong>西原さん：</strong> ありがとうございます。ここは非常に重要なポイントで、<strong>「御社の得意な業界に合わせて、最適なサービスをお選びいただける」</strong>と考えていただくのが一番分かりやすいです。無理に両方を導入する必要は全くありません。それぞれのサービスにメインとなる得意分野があります。</p>
 
-                <div class="voice-item">
-                    <div class="voice-icon">👤</div>
-                    <div>
-                        <h4>「"年8時間"の計画に、もう悩まない」</h4>
-                        <p>（労務担当者様）毎年頭を悩ませていた計画が、テンプレートのおかげで一瞬で形になりました。入職時研修の組み込み忘れもなくなり、法令遵守の安心感が違います。</p>
-                    </div>
-                </div>
-                 <div class="voice-item">
-                    <div class="voice-icon">👤</div>
-                    <div>
-                        <h4>「月末の報告書づくりが、本当に楽になった」</h4>
-                        <p>（営業所長様）「提出様式そのまま出力」は、もはや魔法です（笑）。以前は半日かかっていた作業が数分で終わるので、その分スタッフのフォローに時間を使えるようになりました。</p>
-                    </div>
-                </div>
-                <div class="voice-item">
-                    <div class="voice-icon">👤</div>
-                    <div>
-                        <h4>「Excel、得意になりました！」</h4>
-                        <p>（派遣スタッフ様） 最初は義務だからと受講していましたが、Excel講座が面白くて。派遣先で「お、詳しいね」と褒められることが増え、自信につながりました。</p>
-                    </div>
-                </div>
+        <h4>『派遣の学校』が最適な企業様</h4>
+        <p><strong>保育業界や、専門的なコールセンター業務</strong>など、特定の分野に特化したスタッフを多く派遣されている場合に、その真価を最大限に発揮します。これらの領域では、他にはない専門的で深いカリキュラムが用意されています。</p>
+        <p>もちろん、汎用的なオフィスワーク系の講座も充実していますが、クロスラーニングにも基本的なPCスキルやビジネスマナー講座は含まれております。そのため、御社の主軸が製造・物流であり、所属する事務スタッフ様向けの教育も必要、という場合には、<strong>クロスラーニング一つで十分ご対応可能</strong>です。</p>
+        <p>『派遣の学校』は、特に非製造系の専門職種に強みを持つサービス、とご理解いただくのが良いかと思います。</p>
 
-                <div class="download-section">
-                     <h4>＼ 記事を読んで、すぐ実践！ ／</h4>
-                     <p>「年8時間研修」の計画にそのまま使える、抜け漏れ防止チェックリストをご用意しました。</p>
-                     <a href="#" class="cta-button sub">📄 無料チェックリストをダウンロード</a>
-                </div>
+        <h4>『クロスラーニング』が最適な企業様</h4>
+        <p><strong>製造、物流、倉庫作業</strong>といった「ものづくり」や「ロジスティクス」の現場に強みを持つ場合、こちらの専門性が最大限に活かせます。一般的な安全教育だけでなく、現場のプロを育成するための非常に専門的な講座が揃っています。</p>
 
-                <h3>【連携のススメ】幅広い職種をカバーする「もう一つの選択肢」</h3>
-                <p><strong>西原さん：</strong> ここで明確に使い分けができます。</p>
-                <ul>
-                  <li><strong>『派遣の学校』</strong> → <strong>オフィスワーク、コールセンター、事務</strong>など非製造系</li>
-                  <li><strong>『クロスラーニング』</strong> → <strong>製造、物流</strong>（安全教育、品質管理など）</li>
-                </ul>
-                <p>一社で両輪を持つことで、会社全体の教育基盤をブレなく構築できます。（運営：株式会社クロスリンク）</p>
+        <div class="course-list">
+            <h4>【クロスラーニングの専門講座（一例）】</h4>
+            <ul>
+                <li><strong>品質管理プログラム（初級～上級）：</strong> 現場の品質意識を高め、不良品率の低下に貢献する体系的なプログラムです。</li>
+                <li><strong>ものづくり教育プログラム（初級～上級）：</strong> 図面の読み方から加工の基礎まで、製造業の土台となる知識を網羅します。</li>
+                <li><strong>よくわかる！ロジスティクス入門：</strong> 倉庫作業から輸送まで、物流の全体像と各工程の役割を学べます。</li>
+                <li><strong>製造のプロを目指す人のための 機械加工・旋盤講座：</strong> より専門的な機械操作の知識を深め、多能工化を支援します。</li>
+                <li><strong>製造のプロを目指す人のための 自動車製造講座：</strong> 自動車工場の各工程の役割と、そこで活躍するための知識を習得できます。</li>
+            </ul>
+        </div>
 
-                <div class="profile-box">
-                    <img src="https://placehold.co/120x120/7F8C8D/FFFFFF?text=Photo" alt="西原剛さんの顔写真">
-                    <div>
-                        <h4>この記事の話し手：西原 剛（にしはら つよし）さん</h4>
-                        <p>株式会社プロシーズにて『派遣の学校』の開発責任者を務める。2015年の派遣法改正を機に、数多くの派遣会社の担当者と対話し、現場の課題解決に奔走。「法令遵守」と「現場の負担軽減」を両立させるためのシステム開発と運用サポートに情熱を注いでいる。</p>
-                    </div>
-                </div>
+        <h3>この記事の話し手</h3>
 
-                <h3>まとめ：教育は「義務」から、スタッフと会社の「価値」へ</h3>
-                <p>キャリアアップ教育訓練は、法律で定められた義務です。しかし、それをどう捉えるかで、その価値は大きく変わります。『派遣の学校』は、法令という土台をしっかりと固めた上で、担当者の手間を極限まで減らし、スタッフが「学んでよかった」と思える実用的な学びを提供する。そうすることで、「義務」をスタッフの定着とスキルアップ、ひいては派遣先からの信頼という「価値」に変えていくお手伝いをしています。</p>
+        <div class="profile-box">
+            <img src="https://via.placeholder.com/100x100.png?text=Profile" alt="西原剛さんの顔写真">
+            <div>
+                <h4>西原 剛（にしはら つよし）さん</h4>
+                <p>株式会社プロシーズにて『派遣の学校』の開発責任者を務める。2015年の派遣法改正を機に、数多くの派遣会社の担当者と対話し、現場の課題解決に奔走。「法令遵守」と「現場の負担軽減」を両立させるためのシステム開発と運用サポートに情熱を注いでいる。</p>
+            </div>
+        </div>
 
-                <a href="https://www.pro-seeds.com/haken/" class="cta-button">『派遣の学校』公式サイトで詳しく見る</a>
-                <a href="[ここにクロスラーニングのURLを記載]" class="cta-button sub">製造・物流系なら『クロスラーニング』</a>
+        <h3>まとめ：教育は「義務」から、スタッフと会社の「価値」へ</h3>
+        <p>キャリアアップ教育訓練は、法律で定められた義務です。しかし、それをどう捉えるかで、その価値は大きく変わります。まずはサンプルカリキュラムで小さく始めてみてください。完璧な計画を立てるより、まず動かしてみる方がずっと早く、確実です。</p>
 
-            </article>
-        </main>
+        <a href="#" class="cta-button download">📄 「年間8時間研修」計画チェックリストをダウンロード</a>
+
+        <a href="https://www.pro-seeds.com/haken/" class="cta-button">『派遣の学校』について詳しく見る</a>
+        <a href="[ここにクロスラーニングのURL]" class="cta-button" style="background: linear-gradient(to right, #6c757d, #343a40); box-shadow: 0 4px 10px rgba(108, 117, 125, 0.3);">製造・物流系なら『クロスラーニング』</a>
     </div>
 </body>
 </html>
